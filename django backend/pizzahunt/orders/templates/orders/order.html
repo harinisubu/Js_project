@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Hunt</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+  <!-- Order Section -->
+  <section class="order" id="order">
+    <h3 class="sub-heading">order now</h3>
+    <h1 class="heading">free and fast</h1>
+
+    <!-- 🚀 VERY IMPORTANT FORM -->
+    <form action="/submit-order/" method="POST">
+      {% csrf_token %}
+
+      <div class="inputbox">
+        <div class="input">
+          <span>Your name</span>
+          <input type="text" name="name" placeholder="enter your name" required>
+        </div>
+
+        <div class="input">
+          <span>Your number</span>
+          <input type="text" name="phone" placeholder="enter your number" required>
+        </div>
+      </div>
+
+      <div class="inputbox">
+        <div class="input">
+          <span>Your order</span>
+          <input type="text" name="order_item" placeholder="enter food name" required>
+        </div>
+
+        <div class="input">
+          <span>additional food</span>
+          <input type="text" name="extra_food" placeholder="extra with food">
+        </div>
+      </div>
+
+      <div class="inputbox">
+        <div class="input">
+          <span>How much</span>
+          <input type="number" name="quantity" placeholder="how many orders" required>
+        </div>
+
+        <div class="input">
+          <span>Date and Time</span>
+          <input type="datetime-local" name="date_time" required>
+        </div>
+      </div>
+
+      <div class="inputbox">
+        <div class="input">
+          <span>Your address</span>
+          <textarea name="address" placeholder="enter your address" required></textarea>
+        </div>
+
+        <div class="input">
+          <span>Your message</span>
+          <textarea name="message" placeholder="extra your message"></textarea>
+        </div>
+      </div>
+
+      <input type="submit" value="Order Now" class="btn">
+
+    </form>
+  </section>
+
+</body>
+
+</html>

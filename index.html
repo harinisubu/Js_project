@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Hunt</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <a href="#" class="logo"><i>🍕 Pizza Hunt</i></a>
+
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#dishes">Dishes</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#review">Review</a>
+      <a href="#order">Order</a>
+    </nav>
+
+    <div class="icons">
+      <i class="fas fa-bars" id="menu-bars"></i>
+      <i class="fas fa-search" id="search-icon"></i>
+      <a href="#" class="fas fa-heart" id="open-wishlist">
+        <span id="wishlist-count">0</span>
+      </a>
+      <a href="#" class="fas fa-shopping-cart" id="open-cart">
+        <span id="cart-count">0</span></a>
+
+    </div>
+
+
+  </header>
+  <!-- CART SIDEBAR -->
+  <div id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">X</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-footer">
+      <h3>Total: ₹<span id="cart-total">0</span></h3>
+      <button id="clear-cart" class="btn">Clear Cart</button>
+    </div>
+  </div>
+  <!-- WISHLIST SIDEBAR -->
+  <div id="wishlist-sidebar">
+    <div class="wishlist-header">
+      <h2>Your Wishlist</h2>
+      <button id="close-wishlist">X</button>
+    </div>
+
+    <div id="wishlist-items"></div>
+
+    <div class="wishlist-footer">
+      <button id="clear-wishlist" class="btn">Clear Wishlist</button>
+    </div>
+  </div>
+  
+
+
+  <!-- Search Form -->
+  <form id="search-form">
+    <input type="search" placeholder="search here..." id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+  </form>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="swiper home-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide">
+          <div class="content">
+            <span>Our special dish</span>
+            <h3>Spicy Noodles</h3>
+            <p>Deliciously made spicy noodles with authentic ingredients.</p>
+            <a href="#" class="btn">Order Now</a>
+          </div>
+          <div class="img">
+            <img src="./images/img1.avif" alt="">
+          </div>
+        </div>
+
+        <div class="swiper-slide slide">
+          <div class="content">
+            <span>Our special dish</span>
+            <h3>Grill Chicken</h3>
+            <p>Perfectly grilled chicken with herbs and spices.</p>
+            <a href="#" class="btn">Order Now</a>
+          </div>
+          <div class="img">
+            <img src="./images/i2.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="swiper-slide slide">
+          <div class="content">
+            <span>Our special dish</span>
+            <h3>Hot Pizza</h3>
+            <p>Freshly baked pizza with cheesy goodness!</p>
+            <a href="#" class="btn">Order Now</a>
+          </div>
+          <div class="img">
+            <img src="./images/i3.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- pagination + navigation buttons -->
+      <div class="swiper-pagination"></div>
+      <!-- <div class="swiper-button-next"></div> -->
+      <!-- <div class="swiper-button-prev"></div> -->
+    </div>
+  </section>
+
+  <!-- dishes section -->
+  <section class="dishes" id="dishes">
+    <h3 class="sub-heading">Our Dishes</h3>
+    <h1 class="heading">Popular Dishes</h1>
+    <div class="box-container">
+      <div class="box">
+        <a href="#" class="fas fa-heart wish-btn" data-name="Chicken Burger"></a>
+        <a href="#" class="fas fa-eye"></a>
+        <img src="./images/image1.jpeg" alt="dish1">
+        <h3>Chicken Burger</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+        <span>$12.99</span>
+        <a href="#" class="btn-add-cart" data-name="Chicken Burger" data-price="12.99">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="fried chicken"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image2.jpeg" alt="dish2">
+        <h3>Fried Chicken</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div> <span>$15.99</span>
+        <a href="#" class="btn-add-cart" data-name="fried chicken" data-price="15.99">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="Tandoori Chicken"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image3.avif" alt="">
+        <h3>Chicken Tandoori</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div> <span>$22.90</span>
+        <a href="#" class="btn-add-cart" data-name="Tandoori Chicken" data-price="22.90">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="Cheese Pizza"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image4.jpeg" alt="4">
+        <h3>Cheese Pizza</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div> <span>$30.19</span>
+        <a href="#" class="btn-add-cart" data-name="Cheese Pizza" data-price="30.19">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="Brownie-Icecream"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image5.jpeg" alt="5">
+        <h3>Brownie</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div> <span>$45.30</span>
+        <a href="#" class="btn-add-cart" data-name="Brownie-Icecream" data-price="45.30">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="Chicken Lollipop"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image6.webp" alt="6">
+        <h3>Chicken 65</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+        <span>$35.06</span>
+        <a href="#" class="btn-add-cart" data-name="Chicken Lollipop" data-price="35.06">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="Sandwich"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image7.jpg" alt="6">
+        <h3>Sandwich</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+        <span>$35.06</span>
+        <a href="#" class="btn-add-cart" data-name="Sandwich" data-price="35.06">add to cart</a>
+      </div>
+      <div class="box"> <a href="#" class="fas fa-heart wish-btn" data-name="Pani Puri"></a> <a href="#"
+          class="fas fa-eye"></a> <img src="./images/image8.jpg" alt="6">
+        <h3>Pani Puri</h3>
+        <div class="start"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+            class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+        <span>$35.06</span>
+        <a href="#" class="btn-add-cart" data-name="Pani Puri" data-price="35.06">add to cart</a>
+      </div>
+    </div>
+  </section>
+  <!-- dishes section end -->
+  <!-- about section -->
+  <section class="about" id="about">
+    <h2 class="sub-heading">about us</h2>
+    <h1 class="heading">Why choose us?</h1>
+    <div class="row">
+      <div class="img"> <img src="./images/aboutimg.jpeg" alt=""> </div>
+      <div class="content">
+        <h3>best food in the country</h3>
+        <p class="font-size: 14px">🍕 Experience the finest pizza made with hand-picked ingredients and traditional baking methods.</p>
+        <p>🔥 Every slice brings the perfect balance of crispy crust, melting cheese, and bold toppings.</p>
+        <div class="icons-container">
+          <div class="icons"> <i class="fas fa-dollar-sign"></i> <span>easy payment</span> </div>
+          <div class="icons"> <i class="fas fa-shipping-fast"></i> <span>free delivery</span> </div>
+          <div class="icons"> <i class="fas fa-headset"></i> <span>24/7 services</span> </div>
+        </div> <a href="#" class="btn">Learn more</a>
+      </div>
+    </div>
+  </section>
+  <!-- about section ends -->
+  <!-- menu section -->
+  <section class="menu" id="menu">
+    <h3 class="sub-heading">our menu</h3>
+    <h1 class="heading">today's speciality</h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="img"> <img src="./images/t1.jpg" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Choco Truffles"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Choco Truffles</h3>
+          <p>“Rich, velvety Choco Truffles that melt in your mouth with every bite.” </p>
+          <a href="#" class="btn-add-cart" data-name="Choco Truffles" data-price="60.30">add-to-cart</a>
+          <span class="price">$60.30</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t2-bbq.jpg" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="BBQ"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>BBQ</h3>
+          <p>“Smoky, juicy BBQ grilled to perfection with bold, unforgettable flavor.” </p>
+          <a href="#" class="btn-add-cart" data-name="BBQ" data-price="100.00">add-to-cart</a>
+          <span class="price">$100.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t3-peri-peri.avif" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Peri Peri Chicken"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Peri Peri Chicken</h3>
+          <p>“Fiery, flavour-packed Peri Peri Chicken that hits the perfect spicy kick.” </p>
+          <a href="#" class="btn-add-cart" data-name="Peri Peri Chicken" data-price="250.10">add-to-cart</a>
+          <span class="price">$250.10</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t4-tandoori-panneer.avif" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Tandoori Panneer"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Tandoori Panneer</h3>
+          <p>“Soft, marinated Tandoori Paneer infused with rich spices and char-grilled aroma.” </p>
+          <a href="#" class="btn-add-cart" data-name="Tandoori Panneer" data-price="200.60">add-to-cart</a>
+          <span class="price">$200.60</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t5-creamy-alfredo-melt.avif" alt=""> <a href="#"
+            class="fas fa-heart wish-btn" data-name="Alfredo Melt"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Alfredo Melt</h3>
+          <p>“Creamy, cheesy Alfredo Melt with a silky sauce that melts in your mouth.”</p>
+          <a href="#" class="btn-add-cart" data-name="Alfredo Melt" data-price="310.00">add-to-cart</a>
+          <span class="price">$310.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/tg-panneer-butter-masala.webp" alt=""> <a href="#"
+            class="fas fa-heart wish-btn" data-name="Panneer Butter Masala"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Panneer Butter Masala</h3>
+          <p>“Classic Paneer Butter Masala simmered in a rich, buttery gravy with heavenly aroma.”</p> <a href="#" class="btn-add-cart"
+            data-name="Panneer Butter Masala" data-price="98.25">add-to-cart</a> <span class="price">$98.25</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t7-chicken-kebab.jpg" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Chicken Kebab"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Chicken Kebab</h3>
+          <p>“Tender, spiced Chicken Kebabs grilled to smoky perfection for irresistible flavor.” </p> <a href="#" class="btn-add-cart"
+            data-name="Chicken Kebab" data-price="120.00">add-to-cart</a> <span class="price">$120.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t8-tacos.avif" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Tacos"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Tacos</h3>
+          <p>“Crispy tacos loaded with fresh fillings and bold, savory Mexican flavor.”</p> <a href="#" class="btn-add-cart"
+            data-name="Tacos" data-price="150.00">add-to-cart</a> <span class="price">$150.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t9-mojito.jpg" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Mojito"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Mojito</h3>
+          <p>“A refreshing mojito bursting with minty coolness and zesty lime freshness.” </p> <a href="#" class="btn-add-cart"
+            data-name="Mojito" data-price="260.00">add-to-cart</a> <span class="price">$99.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t-10" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Caramel Crunch Sundae"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Caramel Crunch Sundae</h3>
+          <p>“Creamy sundae topped with rich caramel and a delightful crunch in every spoonful.”</p> <a href="#" class="btn-add-cart"
+            data-name="Caramel Crunch Sundae" data-price="260.00">add-to-cart</a> <span class="price">$150.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t-11.jpg" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Hawaiian Pizza"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Hawaiian Pizza</h3>
+          <p>“A sweet-and-savory delight topped with juicy pineapple and melted cheese.” </p> <a href="#" class="btn-add-cart"
+            data-name="Hawaiian Pizza" data-price="260.00">add-to-cart</a> <span class="price">$300.00</span>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img"> <img src="./images/t-12.webp" alt=""> <a href="#" class="fas fa-heart wish-btn"
+            data-name="Cheese Cake"></a> </div>
+        <div class="content">
+          <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+              class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+          <h3>Cheese Cake</h3>
+          <p>“Smooth, creamy cheesecake with a rich texture and perfectly balanced sweetness.” </p> <a href="#" class="btn-add-cart"
+            data-name="Cheese Cake" data-price="260.00">add-to-cart</a> <span class="price">$500.00</span>
+        </div>
+      </div>
+    </div>
+  </section> <!-- menu section ends --> <!-- review section -->
+  <section class="review" id="review">
+    <h3 class="sub-heading">CUSTOMER'S REVIEW</h3>
+    <h1 class="heading">What they say?</h1>
+    <div class="swiper review-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide"> <i class="fas fa-quote-right"></i>
+          <div class="user"> <img src="./images/mmm-2.jpg" alt="" style="width: 500px; height: 300px;">
+            <div class="user-info">
+              <h3>Mark Ali</h3>
+              <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                  class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+            </div>
+          </div>
+          <p>🍕 From oven-fresh pizzas to flavorful sides and refreshing drinks, every dish consistently exceeds expectations.
+👌 The quality, portion size, and timely service make dining here a delightful experience for families and food lovers.
+❤️ Friendly staff, clean ambiance, and a menu full of variety keep customers coming back again and again.
+🏆 Overall, Pizza Hunt is celebrated as one of the most satisfying and trusted food spots in town!</p>
+        </div>
+        <div class="swiper-slide slide"> <i class="fas fa-quote-right"></i>
+          <div class="user"> <img src="./images/mmm-1.jpg" alt="" style="width: 500px; height: 300px;">
+            <div class="user-info">
+              <h3>jhon deo</h3>
+              <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                  class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+            </div>
+          </div>
+          <p>🍕 Freshly baked pizzas bursting with flavor make every visit feel totally worth it.
+👌 From cheesy classics to spicy treats, the food quality is consistently top-notch.
+❤️ The warm service and friendly staff create a welcoming dining experience for all ages.
+✨ Clean interiors and quick delivery add extra comfort to every order.
+🏆 Truly one of the most dependable and delicious pizza spots in the neighborhood!</p>
+        </div>
+        <div class="swiper-slide slide"> <i class="fas fa-quote-right"></i>
+          <div class="user"> <img src="./images/www-1.jpg" alt="" style="height: 50%;">
+            <div class="user-info">
+              <h3>jhon deo</h3>
+              <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                  class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+            </div>
+          </div>
+          <p>🍕 Every dish comes loaded with authentic taste, rich ingredients, and perfect seasoning.
+👌 The menu variety ensures there’s something for everyone — kids, families, and food lovers alike.
+❤️ Staff are polite, helpful, and always ready to serve with a smile.
+🌟 The dining atmosphere is cozy, vibrant, and perfect for casual hangouts.
+🏆 Overall, a go-to destination for anyone craving quality food and great service!</p>
+        </div>
+        <div class="swiper-slide slide"> <i class="fas fa-quote-right"></i>
+          <div class="user"> <img src="./images/www-3.jpg" alt="" class="www-3">
+            <div class="user-info">
+              <h3>jhon deo</h3>
+              <div class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                  class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> </div>
+            </div>
+          </div>
+          <p>🍕 The pizzas are always fresh, flavorful, and made just the way customers love.
+👌 Portion sizes are generous and the pricing feels absolutely worth it.
+❤️ Customer service is smooth, supportive, and makes every order feel special.
+✨ Ambience is clean, comfortable, and ideal for family meals or casual outings.
+🏆 A highly recommended place for delicious food and a satisfying culinary experience!</p>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+
+
+    </div>
+    </div>
+
+    </div>
+  </section> <!-- order section -->
+  <section class="order" id="order">
+    <h3 class="sub-heading">order now</h3>
+    <h1 class="heading">free and fast</h1>
+    <form action="/submit-order/" method="post">
+      <div class="inputbox">
+        <div class="input"> <span>Your name</span> <input type="text" placeholder="enter your name" name="name"> </div>
+        <div class="input"> <span>your number</span> <input type="text" placeholder="enter your number" name="phone">
+        </div>
+      </div>
+      <div class="inputbox">
+        <div class="input"> <span>Your order</span> <input type="text" placeholder="enter food name" name="order_item">
+        </div>
+        <div class="input"> <span>additional food</span> <input type="text" placeholder="extra with food"
+            name="extra_food">
+        </div>
+      </div>
+      <div class="inputbox">
+        <div class="input"> <span>How much</span> <input type="number" placeholder="how many orders" name="quantity">
+        </div>
+        <div class="input"> <span>date and time</span> <input type="datetime-local" name="date_time"> </div>
+      </div>
+      <div class="inputbox">
+        <div class="input"> <span>Your address</span> <textarea name="address" placeholder="enter your address"
+            cols="30" rows="10"></textarea> </div>
+        <div class="input"> <span>your message</span> <textarea name="message" placeholder="extra your message"
+            cols="30" rows="10"></textarea> </div>
+      </div> <input type="submit" style="text-align: center;" value="order now" class="btn">
+    </form>
+  </section>
+  <!-- order section end -->
+  <!-- footer section -->
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>location</h3> <a href="#">india</a> <a href="#">japan</a> <a href="#">russia</a> <a href="#">korea</a> <a
+          href="#">USA</a>
+      </div>
+      <div class="box">
+        <h3>quick links</h3> <a href="#">home</a> <a href="#">dishes</a> <a href="#">about</a> <a href="#">menu</a> <a
+          href="#">review</a> <a href="#">order</a>
+      </div>
+      <div class="box">
+        <h3>contact info</h3> <a href="#">133456789</a> <a href="#">851234785</a> <a href="#">698712354</a> <a
+          href="#">Coimbatore , India</a>
+        <div class="box">
+          <h3>follow us</h3> <a href="#">facebook</a> <a href="#">twitter</a> <a href="#">instagram</a> <a
+            href="#">linkedin</a>
+        </div>
+      </div>
+  </section>
+
+  <div class="credit" style="font-size: 2rem; text-align: center;">copyright @ 2021 by <span style="color: green;">pizza
+      web design</span></div>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
